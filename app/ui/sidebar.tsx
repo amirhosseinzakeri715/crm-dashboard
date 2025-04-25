@@ -57,10 +57,9 @@ export default function Sidebar() {
 
       {/* Sidebar */}
       <aside className={`
-        fixed min-h-screen bg-white shadow-md p-4 transition-all duration-300 z-40 md:block
-        w-56 
-        ${isMobileOpen ? 'left-0' : '-left-full lg:left-0'}
-        ${isSidebarOpen ? 'flex' :'w-0'} overflow-x-hidden
+        fixed min-h-screen bg-white shadow-md p-4 transition-all duration-300 z-40 
+         
+        ${isMobileOpen ? 'left-0' : '-left-full '}
       `}>
         <h2 className="flex text-xl font-bold mb-6 justify-center items-center text-black">Dashboard</h2>
         
