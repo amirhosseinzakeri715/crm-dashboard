@@ -1,6 +1,15 @@
+'use client';
+
 import { FiUser, FiMail, FiCalendar } from "react-icons/fi";
+import Modal from "./Modal";
+import { useState } from "react";
 
 export default function RecentUsers() {
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+    const openModal = () => setIsModalOpen(true);
+    const closeModal = () => setIsModalOpen(false);
+
     const users = [
         {
             name: "John Doe",
@@ -31,6 +40,14 @@ export default function RecentUsers() {
     return (
         <div className="bg-white border border-blue-200 rounded-lg shadow-lg p-6">
             <h2 className="text-xl font-bold text-black mb-6">Recent Users</h2>
+                <button 
+                    className=" absolute top-10 right-14 px-4 py-1  text-white bg-blue-600 rounded-xl hover:bg-blue-700"
+                    onClick={openModal}
+                >
+                    Product
+                </button>
+
+                <Modal isOpen={isModalOpen} onClose={closeModal} />
             <div className="overflow-x-auto">
                 <table className="min-w-full">
                     <thead>
