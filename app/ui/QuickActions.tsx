@@ -1,11 +1,13 @@
+// import path from "path";
 import { FiPlus, FiDownload, FiUpload, FiSettings } from "react-icons/fi";
 
 export default function QuickActions() {
     const actions = [
         {
-            title: "Add New User",
+            title: "Add New customer",
             icon: <FiPlus className="w-5 h-5" />,
-            color: "bg-blue-500 hover:bg-blue-600"
+            color: "bg-blue-500 hover:bg-blue-600",
+            path:"/customer"
         },
         {
             title: "Export Data",

@@ -14,10 +14,10 @@ const menuItems = [
     path: '/dashboard'
   },
   {
-    title: 'Users',
+    title: 'Customers',
     icon: <FaUser />,
     subItems: [
-      { name: 'Users List', id: 'users-list' }
+      { name: 'customers List', id: 'users-list' }
     ],
     path: '/users'
   },
@@ -35,7 +35,6 @@ const menuItems = [
 export default function Sidebar() {
   const [openIndexes, setOpenIndexes] = useState([]);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
 
   const toggle = (index) => {
@@ -55,13 +54,12 @@ export default function Sidebar() {
         {isMobileOpen ? <FaTimes size={20} /> : <FaBars size={20} />}
       </button>
 
-      {/* Sidebar */}
       <aside className={`
         fixed min-h-screen bg-white shadow-md p-4 transition-all duration-300 z-40 
          
         ${isMobileOpen ? 'left-0' : '-left-full '}
       `}>
-        <h2 className="flex text-xl font-bold mb-6 justify-center items-center text-black">Dashboard</h2>
+        <h2 className="flex text-xl font-extrabold mb-6 justify-center items-center text-black py-10 m-auto">Dashboard</h2>
         
         <ul className="space-y-2">
           {menuItems.map((item, idx) => (
@@ -83,7 +81,7 @@ export default function Sidebar() {
                 </button>
 
                 {openIndexes.includes(idx) && (
-                  <ul className="mt-2 ml-6 space-y-2">
+                  <ul className="mt-2 ml-6 space-y-2 m-auto">
                     {item.subItems.map((subItem, subIdx) => (
                       <li key={subIdx}>
                         <Link 
@@ -104,7 +102,6 @@ export default function Sidebar() {
         </ul>
       </aside>
 
-      {/* Mobile Overlay - Only shows on non-desktop when menu is open */}
       {isMobileOpen && (
         <div 
           className="fixed inset-0 bg-black/50 z-30 min-h-screen lg:hidden"

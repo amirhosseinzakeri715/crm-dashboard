@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Sidebar from './ui/sidebar';
 import Footer from "./ui/footer";
+import { Toaster } from "react-hot-toast";
 // import { AuthProvider } from "./Authcontext";
 
 
@@ -37,6 +38,7 @@ export default function RootLayout({
             </div>
             <div className="">
               {children}
+              <Toaster position="top-right" />
             </div>
 
               <Footer />
